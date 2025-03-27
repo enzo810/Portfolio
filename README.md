@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Portfolio
 
-## Getting Started
+Ce projet est réalisé avec Next.js
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Plusieurs étapes sont nécessaires pour démarrer le projet en local :
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. `pnpm i` pour installer les dépendances du projet
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Récupérer la clé API de la base de donné Neon auprès d'un développeur de l'équipe
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Créer un fichier .env et y ajouter la clé récupérée dans une variable `DATABASE_URL`
 
-## Learn More
+4. `npx prisma generate` pour initialiser le client prisma
 
-To learn more about Next.js, take a look at the following resources:
+5. `npx prisma migrate dev` synchroniser la base de donnée avec les migrations locales
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Lancer le projet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Exécuter la commande `npm next dev` dans le terminal
 
-## Deploy on Vercel
+## Mise à jour du projet
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Après chaque pull, 2 commandes sont nécessaires :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more detailss.
+1. `pnpm i` pour mettre à jour les dépendances
+
+2. `npx prisma migrate dev` pour appliquer les potentielles nouvelles migrations sur la base de donnée
+
+## Modification du schéma de base de données
+
+1. Modifier le fichier `prisma/schema.prisma`
+
+2. `npx prisma migrate dev --name <nom-de-la-migration>` pour créer une nouvelle migration et appliquer les changements
