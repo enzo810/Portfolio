@@ -87,120 +87,46 @@ const Contact = ({ comments }: ContactFormProps) => {
   }
 
   return (
-    <section className="flex h-screen justify-center flex-col" id="contact">
-      <div className="flex flex-col lg:flex-row gap-8">
-        <Card className="p-8 flex-1">
-          <p className="text-xl lg:text-3xl text-center font-bold text-neon mb-2 drop-shadow-neon">
-            Contact
-          </p>
-          <p className="max-lg:text-sm text-center mb-5">
-            Drop me a line, and we&apos;ll be in touch
-          </p>
+    <section className="flex flex-col lg:flex-row gap-8" id="contact">
+      <Card className="p-8 flex-1">
+        <p className="text-xl lg:text-3xl text-center font-bold text-neon mb-2 drop-shadow-neon">
+          Contact
+        </p>
+        <p className="max-lg:text-sm text-center mb-5">
+          Drop me a line, and we&apos;ll be in touch
+        </p>
 
-          <Form {...contactForm}>
-            <form
-              onSubmit={contactForm.handleSubmit(onSubmitEmail)}
-              className="space-y-6 mx-auto"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FormField
-                  control={contactForm.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          type="email"
-                          placeholder="Email Address*"
-                          className=" border-[0.5px] border-foreground lg:h-14 text-foreground"
-                        />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={contactForm.control}
-                  name="object"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          placeholder="Object*"
-                          className="border-[0.5px] border-foreground lg:h-14 text-foreground"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
+        <Form {...contactForm}>
+          <form
+            onSubmit={contactForm.handleSubmit(onSubmitEmail)}
+            className="space-y-6 mx-auto"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormField
                 control={contactForm.control}
-                name="message"
+                name="email"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Textarea
+                      <Input
                         {...field}
-                        placeholder="Your Message*"
-                        className="border-[0.5px] border-foreground text-foreground resize-none h-20 lg:h-40"
+                        type="email"
+                        placeholder="Email Address*"
+                        className=" border-[0.5px] border-foreground lg:h-14 text-foreground"
                       />
                     </FormControl>
-                    <FormMessage />
                   </FormItem>
                 )}
               />
-
-              <div className="flex justify-center">
-                <Button
-                  type="submit"
-                  disabled={sendEmailPending}
-                  variant="neon"
-                  size="xl"
-                >
-                  <span>Send</span>
-                </Button>
-              </div>
-            </form>
-          </Form>
-        </Card>
-        <Card className="p-8 flex-1 flex flex-col">
-          <p className="text-xl lg:text-3xl text-center font-bold text-neon mb-4 drop-shadow-neon">
-            Comments
-          </p>
-
-          <Form {...commentForm}>
-            <form
-              onSubmit={commentForm.handleSubmit(onSubmitComment)}
-              className="space-y-6 flex flex-col flex-grow h-full"
-            >
-              <Card className="border-[0.5px] border-foreground flex-grow p-2 overflow-y-auto h-20 lg:h-32">
-                <div className="flex flex-col gap-2 text-xs">
-                  {comments && comments.length > 0 ? (
-                    comments.map((comment) => (
-                      <div key={comment.id} className="flex justify-between">
-                        <p>{comment.content}</p>
-                        <p>{format(new Date(comment.createdAt), "dd/MM")}</p>
-                      </div>
-                    ))
-                  ) : (
-                    <p>No comments yet...</p>
-                  )}
-                </div>
-              </Card>
-
               <FormField
-                control={commentForm.control}
-                name="content"
+                control={contactForm.control}
+                name="object"
                 render={({ field }) => (
-                  <FormItem className="mb-2">
+                  <FormItem>
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="Write your comment here"
+                        placeholder="Object*"
                         className="border-[0.5px] border-foreground lg:h-14 text-foreground"
                       />
                     </FormControl>
@@ -208,21 +134,93 @@ const Contact = ({ comments }: ContactFormProps) => {
                   </FormItem>
                 )}
               />
+            </div>
 
-              <div className="flex justify-center">
-                <Button
-                  type="submit"
-                  disabled={createCommentPending}
-                  variant="neon"
-                  size="xl"
-                >
-                  <span>Send</span>
-                </Button>
+            <FormField
+              control={contactForm.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Textarea
+                      {...field}
+                      placeholder="Your Message*"
+                      className="border-[0.5px] border-foreground text-foreground resize-none h-20 lg:h-40"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <div className="flex justify-center">
+              <Button
+                type="submit"
+                disabled={sendEmailPending}
+                variant="neon"
+                size="xl"
+              >
+                <span>Send</span>
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </Card>
+      <Card className="p-8 flex-1 flex flex-col">
+        <p className="text-xl lg:text-3xl text-center font-bold text-neon mb-4 drop-shadow-neon">
+          Comments
+        </p>
+
+        <Form {...commentForm}>
+          <form
+            onSubmit={commentForm.handleSubmit(onSubmitComment)}
+            className="space-y-6 flex flex-col flex-grow h-full"
+          >
+            <Card className="border-[0.5px] border-foreground flex-grow p-2 overflow-y-auto h-20 lg:h-32">
+              <div className="flex flex-col gap-2 text-xs">
+                {comments && comments.length > 0 ? (
+                  comments.map((comment) => (
+                    <div key={comment.id} className="flex justify-between">
+                      <p>{comment.content}</p>
+                      <p>{format(new Date(comment.createdAt), "dd/MM")}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p>No comments yet...</p>
+                )}
               </div>
-            </form>
-          </Form>
-        </Card>
-      </div>
+            </Card>
+
+            <FormField
+              control={commentForm.control}
+              name="content"
+              render={({ field }) => (
+                <FormItem className="mb-2">
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="Write your comment here"
+                      className="border-[0.5px] border-foreground lg:h-14 text-foreground"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <div className="flex justify-center">
+              <Button
+                type="submit"
+                disabled={createCommentPending}
+                variant="neon"
+                size="xl"
+              >
+                <span>Send</span>
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </Card>
     </section>
   );
 };

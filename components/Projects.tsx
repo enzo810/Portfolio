@@ -111,10 +111,7 @@ const Projects = () => {
   const ProjectIcon = currentProject?.icon;
 
   return (
-    <section
-      className="flex h-screen justify-center flex-col gap-4"
-      id="projects"
-    >
+    <section className="flex flex-col gap-4" id="projects">
       <p className="text-xl block lg:hidden text-center text-neon drop-shadow-neon">
         Technologies by project
       </p>

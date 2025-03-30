@@ -28,10 +28,7 @@ const timeline = [
 const Timeline = () => {
   const [index, setIndex] = useState(0);
   return (
-    <section
-      className="flex flex-col h-screen justify-center gap-10"
-      id="timeline"
-    >
+    <section className="flex flex-col gap-10" id="timeline">
       <h2 className="text-center text-xl lg:text-3xl font-bold">
         <span className="text-neon drop-shadow-neon">My background</span>{" "}
         <span className="text-gray-700">(color haha)</span>
