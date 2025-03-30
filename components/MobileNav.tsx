@@ -55,15 +55,15 @@ const MobileNav = () => {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger className="flex justify-center items-center">
+      <SheetTrigger>
         <CiMenuFries className="text-[32px] text-neon drop-shadow-neon" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col items-center h-screen">
+      <SheetContent className="flex flex-col justify-center">
         <SheetTitle></SheetTitle>
         <SheetDescription></SheetDescription>
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <div className="text-center text-2xl mb-8">
           <Link href="/">
-            <h1 className="text-4xl font-semibold">
+            <h1 className="text-2xl font-semibold">
               Portfolio <span className="text-neon drop-shadow-neon">.</span>
             </h1>
           </Link>
