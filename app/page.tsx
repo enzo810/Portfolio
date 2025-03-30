@@ -10,7 +10,7 @@ const Page = async () => {
   const comments = await getComments();
 
   return (
-    <div className="flex flex-col scroller gap-32 xl:gap-60 pb-8">
+    <div className="flex flex-col scroller gap-32 xl:gap-60 p-1">
       <Home />
       <Projects />
       <Timeline />

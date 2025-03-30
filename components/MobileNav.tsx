@@ -19,7 +19,7 @@ const MobileNav = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
-    
+
     const findVisibleSection = () => {
       let currentSection = "home";
       sections.forEach((section) => {
@@ -58,7 +58,7 @@ const MobileNav = () => {
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-neon drop-shadow-neon" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
+      <SheetContent className="flex flex-col items-center h-screen">
         <SheetTitle></SheetTitle>
         <SheetDescription></SheetDescription>
         <div className="mt-32 mb-40 text-center text-2xl">
