@@ -5,7 +5,10 @@ import { Button } from "./ui/button";
 
 const Home = () => {
   return (
-    <section className="flex flex-col h-screen justify-center" id="home">
+    <section
+      className="flex flex-col h-screen justify-center max-xs:mt-20"
+      id="home"
+    >
       <div className="flex flex-col xl:flex-row items-center xl:justify-between">
         <div className="text-center xl:text-left order-2 xl:order-1 mt-4 xl:mt-0">
           <span className="text-xl">Web developer</span>
