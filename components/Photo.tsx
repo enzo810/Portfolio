@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Photo = () => {
   return (
-    <div className="relative max-xs:w-[230px] max-xs:h-[250px] w-[250px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten">
+    <div className="relative max-xs:w-[250px] max-xs:h-[250px] w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten">
       <Image
         src="/photo.jpg"
         priority
