@@ -7,7 +7,7 @@ const Header = () => {
   const links = [
     { label: "Technologies", value: "#technologies" },
     { label: "Formations", value: "#formations" },
-    { label: "Projets", value: "#projets" },
+    { label: "Projects", value: "#projects" },
     { label: "Introduction", value: "#introduction" },
   ];
 
@@ -32,19 +32,25 @@ const Header = () => {
         />
       </div>
       <div className="grid grid-cols-4 gap-1">
-        <button className="col-span-1 border-[0.5px] bg-white/5 flex items-center justify-center h-11 transition-colors duration-300 hover:bg-gradient-to-r hover:from-white/20 hover:to-transparent cursor-pointer">
+        <a
+          className="col-span-1 border-[0.5px] bg-white/5 flex items-center justify-center h-11 transition-colors duration-300 hover:bg-gradient-to-r hover:from-white/20 hover:to-transparent cursor-pointer"
+          href="https://www.linkedin.com/in/enzo-sousa-a165b72b7/"
+          target="_blank"
+        >
           <Linkedin />
-        </button>
+        </a>
 
         <Contact />
-        <button
+
+        <a
           className="col-span-1 border-[0.5px] bg-white/5 flex items-center justify-center h-11 hover:bg-gradient-to-r hover:from-white/20 hover:to-transparent cursor-pointer"
-          id="open-button"
+          href="https://github.com/enzo810"
+          target="_blank"
         >
           <Github />
-        </button>
+        </a>
         <a
-          href="./ressources/CV.pdf"
+          href="./CV.pdf"
           download
           className="col-span-1 border-[0.5px] bg-white/5 flex items-center justify-center h-11 hover:bg-gradient-to-r hover:from-white/20 hover:to-transparent cursor-pointer"
           title="Télécharger mon CV"
