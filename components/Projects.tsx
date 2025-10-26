@@ -36,13 +36,20 @@ const Projects = () => {
       title: "Twitter",
       video: "/twitter.mp4",
       href: "https://github.com/enzo810/Twitter",
-      technologies: ["PHP", "MySQL", "JavaScript"],
+      technologies: ["PHP", "SQL", "JavaScript"],
     },
     {
       title: "Sprite Sheet generator",
       video: "/sprite-sheet-generator.mp4",
       href: "https://github.com/enzo810/Sprite-Sheet-Generator",
       technologies: ["PHP"],
+    },
+
+    {
+      title: "Job board",
+      video: "/job-board.mov",
+      href: "https://github.com/enzo810/Job-Board",
+      technologies: ["Python", "React", "SQL", "Tailwind CSS"],
     },
   ];
 
@@ -56,7 +63,7 @@ const Projects = () => {
   return (
     <Section
       title="Projets"
-      id="projets"
+      id="projects"
       content={
         <Carousel
           opts={{
