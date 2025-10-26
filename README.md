@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Portfolio Next.js
 
-## Getting Started
+Ce projet est un **portfolio personnel** développé avec **Next.js** et hébergé sur **Vercel**.  
+Il me présentes ainsi que mes projets, compétences et expériences en tant que développeur.
 
-First, run the development server:
+---
+
+## 🚀 Installation et exécution du projet
+
+### 1. Cloner le dépôt
+
+```bash
+git clone <url_du_repository>
+cd <nom_du_projet>
+```
+
+### 2. Installer les dépendances
+
+Après **chaque `git clone`** du projet ou **chaque `git pull`**, exécuter :
+
+```bash
+npm install
+```
+
+### 3. Lancer le projet en mode développement
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le projet sera accessible à l’adresse :  
+👉 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌿 Nomenclature des branches
 
-## Learn More
+Les branches suivent la convention suivante :
 
-To learn more about Next.js, take a look at the following resources:
+```
+Feat/Nom-De-La-Fonctionnalité
+Fix/Nom-De-La-Correction
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Exemples :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `Feat/Authentification-Security`
+- `Fix/Responsive-Design`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Convention de commits
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Les commits respectent la structure suivante :
+
+```
+feat: ajout d’une nouvelle fonctionnalité
+fix: correction d’un bug
+merge: fusion d’une branche
+```
+
+Exemples :
+
+- `feat: ajout du composant Navbar`
+- `fix: correction du bug d’affichage sur mobile`
+- `merge: fusion de Feat/ContactForm dans main`
+
+---
+
+## ☁️ Déploiement et hébergement
+
+Le projet est hébergé sur **Vercel**.  
+Chaque mise à jour de la branche `main` déclenche automatiquement un **déploiement** sur Vercel.
+
+🔗 **Lien du site en ligne :**  
+👉 https://portfolio-msc.vercel.app/
+
+---
+
+## 🛠️ Stack technique
+
+- **Framework :** Next.js
+- **Langage :** TypeScript
+- **Styling :** Tailwind CSS + Shadcn UI Kit
+- **Hébergement :** Vercel
+
+---
+
+## 💡 Bonnes pratiques
+
+- Toujours créer une **nouvelle branche** avant de développer une fonctionnalité.
+- Respecter les conventions de **commit** et de **branche**.
+- Tester son code avant de pousser sur github.
+
+---
+
+✦ **Auteur :** Enzo Sousa
+✦ **Auteur :** contact@enzo-dev.com
